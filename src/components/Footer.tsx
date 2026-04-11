@@ -21,7 +21,8 @@ export default function Footer() {
             alt="Payvantage Logo" 
             width={160} 
             height={40} 
-            className="h-8 w-auto inline-block lg:block"
+            className="h-8 inline-block lg:block"
+            style={{ width: "auto" }}
           />
         </div>
     <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap justify-between items-start gap-8 mb-16 w-full">
@@ -98,8 +99,8 @@ export default function Footer() {
         alt="PCI DSS Compliant"
         width={90}
         height={28}
-        className="w-auto h-6 lg:h-7"
-        style={{ width: "auto", height: "auto" }}
+        className="h-6 lg:h-7"
+        style={{ width: "auto" }}
       />
     </div>
     <span className="text-white font-semibold text-[13px] md:text-[15px]">

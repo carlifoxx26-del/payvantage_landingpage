@@ -17,7 +17,8 @@ export default function Navbar() {
             alt="Payvantage Logo"
             width={150}
             height={40}
-            className="h-8 w-auto"
+            className="h-8"
+            style={{ width: "auto" }}
           />
         </Link>
       </div>
