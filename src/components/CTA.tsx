@@ -18,9 +18,9 @@ export default function CTA() {
           Lets demonstrate how we can add value to your company with our <br className="hidden md:block" /> suite of payment solutions.
         </p>
         
-        <button className="bg-brand-primary text-white px-10 py-4 rounded-lg font-bold hover:scale-105 transition-all shadow-xl mb-16">
+        <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo" className="inline-block bg-brand-primary text-white px-10 py-4 rounded-lg font-bold hover:scale-105 transition-all shadow-xl mb-16">
           BOOK A DEMO
-        </button>
+        </a>
 
         <div className="relative w-full max-w-360 mx-auto aspect-4/1 md:aspect-[4.2/1] overflow-hidden mt-10">
           <Image 

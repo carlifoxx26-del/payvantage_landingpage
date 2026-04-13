@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Careers",
+};
 
 export default function CareersPage() {
   const jobs = [
@@ -12,7 +17,7 @@ export default function CareersPage() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
       {/* Navbar Section */}
-      <div className="bg-[#2C2E6A]">
+      <div className="bg-brand-logo">
       
       </div>
 
@@ -22,7 +27,7 @@ export default function CareersPage() {
           Careers At Payvantage
         </span>
         
-        <h1 className="text-[24px] lg:text-[40px] font-black text-[#3E4095] leading-[1.2] mb-6">
+        <h1 className="text-[24px] lg:text-[40px] font-black text-brand-primary leading-[1.2] mb-6">
           Join The Team Behind <br className="hidden md:block" /> The Future Of Seamless Payments
         </h1>
         
@@ -34,7 +39,7 @@ export default function CareersPage() {
         {/* Filters and Actions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <div className="relative">
-            <select className="appearance-none border border-gray-200 text-gray-800 py-3.5 pl-6 pr-14 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5153A0] font-semibold text-sm w-[260px]">
+            <select className="appearance-none border border-gray-200 text-gray-800 py-3.5 pl-6 pr-14 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5153A0] font-semibold text-sm w-[260px]" aria-label="Filter by department">
               <option>All Departments</option>
               <option>Engineering</option>
               <option>Data Science</option>
@@ -94,7 +99,9 @@ export default function CareersPage() {
                 Ready to take your career to the next level? Do you thrive in a dynamic and innovative work environment and ready to make an impact, we want to hear from you! Apply now and join our incredible pool of talents.
               </p>
               
-              <button className="bg-brand-primary text-white px-10 py-4 rounded-lg font-bold hover:scale-105 transition-all shadow-xl mb-16">
+              <button 
+                className="bg-brand-primary text-white px-10 py-4 rounded-lg font-bold hover:scale-105 transition-all shadow-xl mb-16"
+              >
                 Submit CV
               </button>
       
@@ -104,7 +111,6 @@ export default function CareersPage() {
                           alt="Payvantage Team" 
                           fill
                           className="object-cover object-top mix-blend-multiply scale-[1.03]"
-                          priority
                         />
                       </div>
             </div>

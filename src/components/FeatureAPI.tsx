@@ -26,8 +26,9 @@ export default function FeatureAPI() {
               alt="API Documentation" 
               width={600}
               height={335}
-              className="w-200 h-auto mix-blend-multiply drop-shadow-none "
-              style={{ mixBlendMode: 'multiply' }}
+              className="w-200 h-auto mix-blend-multiply drop-shadow-none"
+              style={{ mixBlendMode: 'multiply', width: 'auto', height: 'auto' }}
+              priority
             />
           </div>
           {/* Subtle background glow */}

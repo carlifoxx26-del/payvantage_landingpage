@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Stats from "@/components/Stats";
-import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AboutUs",
+};
 
 export default function AboutPage() {
   return (
@@ -25,9 +29,9 @@ export default function AboutPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <button className="w-full sm:w-auto bg-[#5153A01A] text-[#5153A0] px-8 py-5 rounded-md font-bold hover:bg-[#F4F5F9] transition-all text-sm">
+            <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo" className="w-full sm:w-auto bg-[#5153A01A] text-[#5153A0] px-8 py-5 rounded-md font-bold hover:bg-[#F4F5F9] transition-all text-sm text-center">
               Book A Demo
-            </button>
+            </a>
           </div>
         </div>
 
@@ -55,7 +59,7 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-6 text-black font-medium text-[16px] leading-relaxed  ">
             <p className="font-semibold text-[#000000] border-l-[4px] border-[#2C2E6A] text-[16px] pl-4 py-1 italic">
-             "We set out to provide and enable payment for emerging customers — addressing their pain points head-on."
+             'We set out to provide and enable payment for emerging customers — addressing their pain points head-on.'
             </p>
             <p>
               We understand that to deliver value continuously, we must address what job the customer needs to get done. With this question in mind, we set out to provide and enable payment for emerging customers and address their pain points.
@@ -77,7 +81,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-[#5153A0] font-bold text-[14px] mb-2">What We Do</h3>
               <p className="text-gray-500 text-[14px] font-medium leading-relaxed">
-               We enable payments for merchants and customers by leveraging emerging technologies and strategic partnerships across Nigeria's financial value network.
+               We enable payments for merchants and customers by leveraging emerging technologies and strategic partnerships across Nigeria&apos;s financial value network.
               </p>
             </div>
           </div>
@@ -181,8 +185,8 @@ export default function AboutPage() {
            <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
        Our Journey
         </span>
-          <h2 className="text-3xl md:text-[40px] font-extrabold text-[#3E4095] mb-5">Milestones That Shaped Us</h2>
-          <p className="text-[#1a1a1a] font-bold text-[15px]">From an idea to a trusted payment infrastructure — here's how Payvantage grew.</p>
+          <h2 className="text-2xl md:text-[40px] font-extrabold text-[#3E4095] mb-5">Milestones That Shaped Us</h2>
+          <p className="text-[#1a1a1a] font-bold text-[15px]">From an idea to a trusted payment infrastructure — here&apos;s how Payvantage grew.</p>
         </div>
 
         <div className="max-w-3xl mx-auto relative pl-4 md:pl-0 mt-4">
@@ -241,7 +245,7 @@ export default function AboutPage() {
       <section className="relative pt-24 pb-0 px-6 lg:px-12 bg-[#F5F6FF] overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-6">
-            <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
+            <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold ">
         Contact Us
         </span>
           </div>
@@ -251,12 +255,12 @@ export default function AboutPage() {
           </h2>
           
           <p className="text-[#000000] text-[14px] md:text-[15px] max-w-[600px] mx-auto mb-10 font-bold px-4 md:px-0 opacity-90">
-            Let's demonstrate how we can add value to your company with our suite of payment solutions.
+            Let&apos;s demonstrate how we can add value to your company with our suite of payment solutions.
           </p>
           
-          <button className="bg-[#3E4095] text-white px-10 py-3.5 rounded-lg text-[13px] font-bold border-b-[4px] border-indigo-900/60 hover:translate-y-[2px] hover:border-b-[2px] transition-all shadow-md mb-10">
+          <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo" className="bg-[#3E4095] text-white px-10 py-3.5 rounded-lg text-[13px] font-bold border-b-[4px] border-indigo-900/60 hover:translate-y-[2px] hover:border-b-[2px] transition-all shadow-md mb-10 inline-block">
             Book A Demo
-          </button>
+          </a>
   
           <div className="relative w-full max-w-[1440px] mx-auto aspect-[4/1] md:aspect-[4.2/1] overflow-hidden mt-10">
                     <Image 

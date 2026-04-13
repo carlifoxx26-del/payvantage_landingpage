@@ -1,6 +1,4 @@
 
-import Link from "next/link";
-
 export default function DevelopersPage() {
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -12,9 +10,9 @@ export default function DevelopersPage() {
         <p className="text-lg text-gray-600 mb-8 max-w-2xl">
           Build the future of payments with our comprehensive APIs and easy-to-use SDKs designed for scale and security.
         </p>
-        <Link href="/" className="px-6 py-3 bg-[#5153A0] text-white rounded-md font-medium hover:bg-[#2C2E6A] transition-colors">
-          Return Home
-        </Link>
+        <a href="https://payvantage.gitbook.io/payvantage.gitbook.io" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#5153A0] text-white rounded-md font-medium hover:bg-[#2C2E6A] transition-colors">
+          View Documentation
+        </a>
       </div>
     </main>
   );

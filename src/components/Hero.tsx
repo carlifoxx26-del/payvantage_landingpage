@@ -47,12 +47,18 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-row items-center justify-center space-x-3 sm:space-x-4 w-full px-2 mt-4 sm:mt-0">
-          <button className="flex-1 sm:flex-initial sm:max-w-none bg-white text-brand-logo px-3 py-3.5 sm:px-3.75 sm:py-5 rounded-md text-[13px] sm:text-[15px] font-semibold hover:bg-gray-100 transition-all shadow-md">
+          <a
+            href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo"
+            className="flex-1 sm:flex-initial sm:max-w-none bg-white text-brand-logo px-3 py-3.5 sm:px-3.75 sm:py-5 rounded-md text-[13px] sm:text-[15px] font-semibold hover:bg-gray-100 transition-all shadow-md text-center"
+          >
             Book A Demo
-          </button>
-          <button className="flex-1 sm:flex-initial sm:max-w-none bg-[#5153A0] text-white hover:bg-[#5153A0]/60 px-3 py-3.5 sm:px-3.75 sm:py-5 rounded-md text-[13px] sm:text-[15px] font-semibold transition-all">
+          </a>
+          <a
+            href="mailto:info@payvantage.com.ng?subject=Contact%20Sales"
+            className="flex-1 sm:flex-initial sm:max-w-none bg-[#5153A0] text-white hover:bg-[#5153A0]/60 px-3 py-3.5 sm:px-3.75 sm:py-5 rounded-md text-[13px] sm:text-[15px] font-semibold transition-all text-center"
+          >
             Contact Sales
-          </button>
+          </a>
         </div>
       </div>
     </section>

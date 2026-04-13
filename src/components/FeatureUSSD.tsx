@@ -27,13 +27,13 @@ export default function FeatureUSSD() {
   ];
 
   return (
-    <section className="pb-20 pt-0 md:pt-20 px-6 lg:px-12 bg-white overflow-hidden">
+    <section id="products" className="pb-20 pt-0 md:pt-20 px-6 lg:px-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 flex flex-col items-start text-left">
           <span className="inline-block bg-[#5153A0] text-white px-8 py-5 border-b-5 border-gray-300 rounded-full text-[12px] font-bold mb-6">
             Our Products
           </span>
-          <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-[#3E4095] leading-tight mb-4 px-2 lg:px-0">
+          <h2 className="text-2xl md:text-[28px] lg:text-[32px] font-extrabold text-brand-primary leading-tight mb-4 px-2 lg:px-0">
             Build For The Future Of Digital <br className="hidden md:block" /> Payments.
           </h2>
           <p className="text-black max-w-xl text-[13px] md:text-[14px] font-bold px-2 lg:px-0">
@@ -43,9 +43,9 @@ export default function FeatureUSSD() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Main USSD Card */}
-          <div className="md:col-span-2 lg:col-span-2 relative bg-[#EDF8FC] rounded-xl border-[#E5E7EB] border-b-5 p-8 lg:p-12 overflow-hidden group min-h-[380px] lg:h-85 flex flex-col justify-center hover:shadow-lg transition-all duration-300">
+          <div className="md:col-span-2 lg:col-span-2 relative bg-[#EDF8FC] rounded-xl border-[#E5E7EB] border-b-5 p-8 lg:p-12 overflow-hidden group min-h-95 lg:h-85 flex flex-col justify-center hover:shadow-lg transition-all duration-300">
             <div className="relative z-10 max-w-sm ">
-              <h3 className="text-[20px] font-extrabold text-[#3E4095] -mt-37 md:mt-0 mb-1">USSD Platform</h3>
+              <h3 className="text-[20px] font-extrabold text-brand-primary -mt-37 md:mt-0 mb-1">USSD Platform</h3>
               <p className="text-[#5B799A] leading-5 md:leading-relaxed text-[14px] font-medium w-[110%] md:w-[95%]">
                 Robust, scalable, and customer-centric USSD platform for interactive user experience — reaching even the unbanked.
               </p>
@@ -64,7 +64,7 @@ export default function FeatureUSSD() {
           </div>
 
           {/* Side Card: Virtual Accounts */}
-          <div className="lg:col-span-1 bg-[#F0FDF4] rounded-xl border-[#E5E7EB] border-b-5 p-8 lg:p-10 flex flex-col justify-start relative overflow-hidden min-h-[380px] lg:h-85 hover:shadow-lg transition-all duration-300">
+          <div className="lg:col-span-1 bg-[#F0FDF4] rounded-xl border-[#E5E7EB] border-b-5 p-8 lg:p-10 flex flex-col justify-start relative overflow-hidden min-h-95 lg:h-85 hover:shadow-lg transition-all duration-300">
             <div className="z-10 relative">
               <h3 className="text-[17px] font-extrabold text-[#111827] mb-2">Virtual Accounts</h3>
               <p className="text-[#5B799A] leading-relaxed text-[14px] font-medium">
@@ -81,10 +81,10 @@ export default function FeatureUSSD() {
           {cards.map((card, index) => (
             <div 
               key={index} 
-              className={`${card.bgColor} relative lg:col-span-1 rounded-xl border-[#E5E7EB] border-b-5 p-8 lg:p-10 flex flex-col justify-start min-h-[340px] overflow-hidden hover:shadow-lg transition-all duration-300`}
+              className={`${card.bgColor} relative lg:col-span-1 rounded-xl border-[#E5E7EB] border-b-5 p-8 lg:p-10 flex flex-col justify-start min-h-85 overflow-hidden hover:shadow-lg transition-all duration-300`}
             >
               <div className="z-10 relative">
-                <h3 className="text-[17px] font-extrabold text-[#3E4095] mb-2">{card.title}</h3>
+                <h3 className="text-[17px] font-extrabold text-brand-primary mb-2">{card.title}</h3>
                 <p className="text-[#5B799A] leading-relaxed text-[14px] font-medium">
                   {card.description}
                 </p>

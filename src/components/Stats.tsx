@@ -21,7 +21,7 @@ function StatItem({ value, label, icon }: { value: string; label: string; icon?:
     separator: ",",
     suffix: `${plus} ${word}`,
     enableScrollSpy: true,
-    scrollSpyOnce: true,
+    scrollSpyOnce: false,
     scrollSpyDelay: 200,
   });
 
