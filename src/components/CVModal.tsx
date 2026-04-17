@@ -23,12 +23,22 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validation functions
+    const isValidPhone = (phone: string) => {
+      const phoneDigits = phone.replace(/\D/g, '');
+      return phoneDigits.length >= 11;
+    };
+
+    const isValidEmail = (email: string) => {
+      return email.includes('@');
+    };
+
     // Simple validation
     const newErrors: Record<string, boolean> = {
       firstName: !formData.firstName,
       lastName: !formData.lastName,
-      phone: !formData.phone,
-      email: !formData.email,
+      phone: !formData.phone || !isValidPhone(formData.phone),
+      email: !formData.email || !isValidEmail(formData.email),
       cv: !formData.cv
     };
 
@@ -59,8 +69,8 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
       />
       
       {/* Modal Container */}
-      <div className="relative bg-white rounded-2xl w-full max-w-4xl shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300">
-        <div className="p-8 lg:p-12">
+      <div className="relative bg-white rounded-2xl w-full max-w-4xl shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300 max-h-[90vh] overflow-y-auto">
+        <div className="p-4 sm:p-8 lg:p-12">
           {/* Header */}
           <div className="mb-8">
             <h2 className="text-xl font-extrabold text-[#111827] mb-2">Join Us</h2>
@@ -70,15 +80,8 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
           </div>
 
           <form className="space-y-8" onSubmit={handleSubmit} noValidate>
-            {/* Upload Button Placeholder (matching design) */}
-            <div className="mb-6">
-              <button type="button" className="bg-[#3E4095] text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md hover:opacity-90 transition-all">
-                Upload your CV/Resume
-              </button>
-            </div>
-
             {/* Form Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-8 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-8 items-start">
               {/* First Name */}
               <div className="flex flex-col lg:col-span-1">
                 <label className={`text-[14px] font-bold mb-2 transition-colors ${errors.firstName ? 'text-[#E11D48]' : 'text-[#374151]'}`}>First Name <span className="text-[#E11D48]">*</span></label>
@@ -87,7 +90,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                   placeholder="Enter First Name" 
                   value={formData.firstName}
                   onChange={(e) => handleInputChange('firstName', e.target.value)}
-                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#3E4095] transition-all bg-[#F8FAFC] ${errors.firstName ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
+                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all bg-[#F8FAFC] ${errors.firstName ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
                 />
                 {errors.firstName && <span className="text-[12px] font-bold text-[#E11D48] mt-2">Required</span>}
               </div>
@@ -100,7 +103,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                   placeholder="Enter Last Name" 
                   value={formData.lastName}
                   onChange={(e) => handleInputChange('lastName', e.target.value)}
-                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#3E4095] transition-all bg-[#F8FAFC] ${errors.lastName ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
+                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all bg-[#F8FAFC] ${errors.lastName ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
                 />
                 {errors.lastName && <span className="text-[12px] font-bold text-[#E11D48] mt-2">Required</span>}
               </div>
@@ -113,9 +116,9 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                   placeholder="Enter Phone number" 
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#3E4095] transition-all bg-[#F8FAFC] ${errors.phone ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
+                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all bg-[#F8FAFC] ${errors.phone ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
                 />
-                {errors.phone && <span className="text-[12px] font-bold text-[#E11D48] mt-2">Required</span>}
+                {errors.phone && <span className="text-[12px] font-bold text-[#E11D48] mt-2">{!formData.phone ? 'Required' : 'Phone number must be at least 11 digits'}</span>}
               </div>
 
               {/* Email */}
@@ -126,27 +129,57 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                   placeholder="Enter email" 
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#3E4095] transition-all bg-[#F8FAFC] ${errors.email ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
+                  className={`w-full border rounded-lg py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all bg-[#F8FAFC] ${errors.email ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}
                 />
                 {errors.email && <span className="text-[12px] font-bold text-[#E11D48] mt-2">Required</span>}
               </div>
 
               {/* Document Upload */}
-              <div className="flex flex-col md:col-span-2 lg:col-span-2">
-                <label className={`text-[14px] font-bold mb-2 transition-colors ${errors.cv ? 'text-[#E11D48]' : 'text-[#94A3B8]'}`}>Document Upload <span className="text-[#E11D48]">*</span></label>
+              <div className="flex flex-col md:col-span-2 lg:col-span-1 relative ">
+                <label className={`text-[14px] font-bold mb-2 transition-colors ${errors.cv ? 'text-[#E11D48]' : 'text-black'}`}>Document Upload <span className="text-[#E11D48]">*</span></label>
                 <div className="relative group">
-                  <input 
+                  <input
+                    placeholder='Upload CV'
                     type="file" 
                     accept=".pdf"
                     onChange={(e) => handleInputChange('cv', e.target.files?.[0] || null)}
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                   />
-                  <div className={`flex items-center justify-between w-full border rounded-lg py-3 px-4 bg-white text-sm group-hover:border-[#3E4095] transition-all ${errors.cv ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200'}`}>
-                    <span className="font-bold text-[#111827]">
-                        {formData.cv ? 'File selected' : 'Choose File'}
-                    </span>
-                    {!formData.cv && <span className="text-gray-400">No file chosen</span>}
-                  </div>
+                  {formData.cv ? (
+                    <div className={`w-full border rounded-lg p-6 bg-linear-to-br from-[#F8FAFC] to-white transition-all ${errors.cv ? 'border-[#E11D48] ring-1 ring-[#E11D48]' : 'border-gray-200 border-2'}`}>
+                      <div className="flex items-center gap-4">
+                        <div className="shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-red-600">
+                          <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.9985 2C3.44749 2 3 2.44405 3 2.9918V21.0082C3 21.5447 3.44476 22 3.9934 22H20.0066C20.5551 22 21 21.5489 21 20.9925L20.9997 7L16 2H3.9985ZM10.5 7.5H12.5C12.5 9.98994 14.6436 12.6604 17.3162 13.5513L16.8586 15.49C13.7234 15.0421 10.4821 16.3804 7.5547 18.3321L6.3753 16.7191C7.46149 15.8502 8.50293 14.3757 9.27499 12.6534C10.0443 10.9373 10.5 9.07749 10.5 7.5ZM11.1 13.4716C11.3673 12.8752 11.6043 12.2563 11.8037 11.6285C12.2754 12.3531 12.8553 13.0182 13.5102 13.5953C12.5284 13.7711 11.5666 14.0596 10.6353 14.4276C10.8 14.1143 10.9551 13.7948 11.1 13.4716Z"></path></svg>
+                        </div>
+                        <div className="grow min-w-0">
+                          <p className="font-semibold text-[#111827] truncate">{formData.cv.name}</p>
+                          <p className="text-[#94A3B8] text-xs mt-1">
+                            {(formData.cv.size / 1024).toFixed(2)} KB • {formData.cv.type}
+                          </p>
+                        </div>
+                        <button
+                          title='button'
+                          type="button"
+                          onClick={() => handleInputChange('cv', null)}
+                          className="shrink-0 text-gray-400 hover:text-red-600 transition-colors p-1"
+                        >
+                          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={`flex flex-col items-center justify-center w-full border-2 rounded-lg py-20 px-20 bg-white text-sm group-hover:border-brand-primary transition-all  border-dashed border-gray-200`}>
+                      <span className="text-[#94A3B8] size-6 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12.5858L16.2426 16.8284L14.8284 18.2426L13 16.415V22H11V16.413L9.17157 18.2426L7.75736 16.8284L12 12.5858ZM12 2C15.5934 2 18.5544 4.70761 18.9541 8.19395C21.2858 8.83154 23 10.9656 23 13.5C23 16.3688 20.8036 18.7246 18.0006 18.9776L18.0009 16.9644C19.6966 16.7214 21 15.2629 21 13.5C21 11.567 19.433 10 17.5 10C17.2912 10 17.0867 10.0183 16.8887 10.054C16.9616 9.7142 17 9.36158 17 9C17 6.23858 14.7614 4 12 4C9.23858 4 7 6.23858 7 9C7 9.36158 7.03838 9.7142 7.11205 10.0533C6.91331 10.0183 6.70879 10 6.5 10C4.567 10 3 11.567 3 13.5C3 15.2003 4.21241 16.6174 5.81986 16.934L6.00005 16.9646L6.00039 18.9776C3.19696 18.7252 1 16.3692 1 13.5C1 10.9656 2.71424 8.83154 5.04648 8.19411C5.44561 4.70761 8.40661 2 12 2Z"></path></svg>
+                      </span>
+                      <span className="font-bold text-[#111827] text-center">
+                        Choose File
+                      </span>
+                     
+                    </div>
+                  )}
                 </div>
                 <span className={`text-[12px] mt-2 font-medium ${errors.cv ? 'text-[#E11D48]' : 'text-[#94A3B8]'}`}>
                     {errors.cv ? 'Required' : 'File should be in pdf'}
@@ -158,7 +191,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
             <div className="pt-4">
               <button 
                 type="submit" 
-                className="w-full bg-[#3E4095] text-white py-4 rounded-lg font-bold text-[15px] shadow-lg hover:opacity-95 transition-all active:scale-[0.99]"
+                className="px-4 py-4 bg-brand-primary text-white rounded-lg font-bold text-[15px] shadow-lg hover:opacity-95 transition-all active:scale-[0.99]"
               >
                 Submit CV/Resume
               </button>
@@ -167,6 +200,7 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
 
           {/* Close Button X */}
           <button 
+            title='button'
             onClick={onClose}
             className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors p-2"
           >

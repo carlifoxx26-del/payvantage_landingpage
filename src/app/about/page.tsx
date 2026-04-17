@@ -16,14 +16,14 @@ export default function AboutPage() {
          <span className="inline-block bg-[#5153A0] text-white px-8 py-4 border-b-[5px] border-gray-300 rounded-full text-[12px] font-bold mb-6">
          Our Story
         </span>
-          <h1 className="text-3xl md:text-[40px] lg:text-[40px] font-extrabold text-[#3E4095] leading-13 mb-6">
+          <h1 className="text-3xl md:text-[40px] lg:text-[40px] font-extrabold text-brand-primary leading-13 mb-6">
             Enabling Payments For A <br className="hidden lg:block"/> Digital Africa
           </h1>
-          <p className="text-gray-600 font-medium text-[15px] mb-10 max-w-[520px] leading-relaxed">
+          <p className="text-gray-600 font-medium text-[15px] mb-10 max-w-130 leading-relaxed">
             We are a leading tech-driven payment solutions provider in Africa. We aim to connect the continent with digital payment solutions, creating value for everyday operations.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <button className="w-full sm:w-auto bg-[#3E4095] text-white px-8 py-5 rounded-md font-bold hover:bg-[#2C2E6A] shadow-md transition-all text-sm flex items-center justify-center gap-2">
+            <button className="w-full sm:w-auto bg-brand-primary text-white px-8 py-5 rounded-md font-bold hover:bg-brand-logo shadow-md transition-all text-sm flex items-center justify-center gap-2">
               Read Our Story
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
@@ -35,8 +35,8 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-          <div className="bg-[#EFEFF4] rounded-xl w-full h-[220px] sm:h-[280px] md:h-[350px] relative overflow-hidden mix-blend-multiply">
+        <div className="w-full lg:w-1/2 mt-8 lg:mt-10">
+          <div className=" rounded-xl w-full h-[220px] sm:h-[280px] md:h-[350px] relative overflow-hidden mix-blend-multiply">
             <Image 
               src="/image/Group_Pic.svg" 
               alt="Payvantage Team" 
@@ -58,8 +58,8 @@ export default function AboutPage() {
             Built To Solve A Real <br className="hidden md:block"/> Problem
           </h2>
           <div className="space-y-6 text-black font-medium text-[16px] leading-relaxed  ">
-            <p className="font-semibold text-[#000000] border-l-[4px] border-[#2C2E6A] text-[16px] pl-4 py-1 italic">
-             'We set out to provide and enable payment for emerging customers — addressing their pain points head-on.'
+            <p className="font-semibold text-[#000000] border-l-4 border-brand-logo text-[16px] pl-4 py-1 italic">
+             We set out to provide and enable payment for emerging customers — addressing their pain points head-on.
             </p>
             <p>
               We understand that to deliver value continuously, we must address what job the customer needs to get done. With this question in mind, we set out to provide and enable payment for emerging customers and address their pain points.
@@ -189,56 +189,71 @@ export default function AboutPage() {
           <p className="text-[#1a1a1a] font-bold text-[15px]">From an idea to a trusted payment infrastructure — here&apos;s how Payvantage grew.</p>
         </div>
 
-        <div className="max-w-3xl mx-auto relative pl-4 md:pl-0 mt-4">
+        <div className="max-w-3xl mx-auto relative pl-1 md:pl-0 mt-4">
           {/* Vertical timeline line */}
-          <div className="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-[4px] bg-white md:-ml-[2px] -ml-[2px]"></div>
+          <div className="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-[4px] bg-white md:-ml-[2px] -ml-[30px]"></div>
           
           {/* Milestone 1 (Left Side) */}
           <div className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between">
-            <div className="w-[calc(100%-4.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-16 md:ml-0 md:text-left">
+            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0 md:text-left">
               {/* Arrow right (desktop) */}
               <div className="hidden md:block absolute top-[50%] -translate-y-1/2 -right-[10px] w-[22px] h-[22px] bg-white rotate-45 rounded-[2px] -z-10"></div>
               {/* Arrow left (mobile) */}
               <div className="block md:hidden absolute top-[50%] -translate-y-1/2 -left-[10px] w-[22px] h-[22px] bg-white rotate-45 rounded-[2px] -z-10"></div>
 
               <span className="text-[#3E4095] font-bold text-[14px] md:text-[15px] mb-2 block">25th January, 1960</span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[18px] mb-1">Office Inauguration Function</h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">Started journey in a the new office</p>
+              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">Payvantage was born</h3>
+              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">Founded with a clear mission: To bridge the payment gap for Nigeria’s emerging digital economy and reach the unbanked through mobile channels.</p>
             </div>
-            <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-[22px] h-[22px] bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-[11px] md:-ml-[11px] z-20"></div>
+            <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-[22px] h-[22px] bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-[11px] z-20"></div>
             <div className="hidden md:block w-[45%]"></div>
           </div>
 
           {/* Milestone 2 (Right Side) */}
           <div className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between">
             <div className="hidden md:block w-[45%]"></div>
-            <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-[22px] h-[22px] bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-[11px] md:-ml-[11px] z-20"></div>
-            <div className="w-[calc(100%-4.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-16 md:ml-0">
+            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20"></div>
+            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0">
               {/* Arrow left (both desktop and mobile) */}
-              <div className="absolute top-[50%] -translate-y-1/2 -left-[10px] w-[22px] h-[22px] bg-white rotate-45 rounded-[2px] -z-10"></div>
+              <div className="absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10"></div>
 
-              <span className="text-[#3E4095] font-bold text-[14px] md:text-[15px] mb-2 block">25th January, 1960</span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[18px] mb-1">Office Inauguration Function</h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">Started journey in a the new office</p>
+              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">25th January, 1960</span>
+              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">USSD platform launched</h3>
+              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">Deployed our robust, scalable USSD platform enabling interactive payment experiences for millions of feature-phone users across Nigeria.</p>
             </div>
           </div>
 
           {/* Milestone 3 (Left Side) */}
-          <div className="relative w-full flex flex-col md:flex-row items-center justify-between">
-            <div className="w-[calc(100%-4.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-16 md:ml-0 md:text-left">
+          <div className="relative w-full flex flex-col md:flex-row items-center justify-between mb-6">
+            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0 md:text-left">
               {/* Arrow right (desktop) */}
-              <div className="hidden md:block absolute top-[50%] -translate-y-1/2 -right-[10px] w-[22px] h-[22px] bg-white rotate-45 rounded-[2px] -z-10"></div>
+              <div className="hidden md:block absolute top-[50%] -translate-y-1/2 -right-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10"></div>
               {/* Arrow left (mobile) */}
-              <div className="block md:hidden absolute top-[50%] -translate-y-1/2 -left-[10px] w-[22px] h-[22px] bg-white rotate-45 rounded-[2px] -z-10"></div>
+              <div className="block md:hidden absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10"></div>
 
-              <span className="text-[#3E4095] font-bold text-[14px] md:text-[15px] mb-2 block">25th January, 1960</span>
-              <h3 className="text-[#1a1a1a] font-extrabold text-[18px] mb-1">Office Inauguration Function</h3>
-              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">Started journey in a the new office</p>
+              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">25th January, 1960</span>
+              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">Strategic partnerships secured</h3>
+              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">Forged partnerships with MTN, Globacom, 9Mobile, Jaiz Bank, WAEC, and AWS - building one of Nigeria’s most connected ecosystems</p>
             </div>
-            <div className="absolute top-[50%] -translate-y-1/2 left-[30px] md:left-1/2 w-[22px] h-[22px] bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-[11px] md:-ml-[11px] z-20"></div>
+            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20"></div>
             <div className="hidden md:block w-[45%]"></div>
           </div>
+          {/* Milestone 4 (Right Side) */}
+          <div className="relative mb-6 w-full flex flex-col md:flex-row items-center justify-between">
+            <div className="hidden md:block w-[45%]"></div>
+            <div className="absolute top-[50%] -translate-y-1/2 left-7.5 md:left-1/2 w-5.5 h-5.5 bg-[#F5F6FA] rounded-full border-[5px] border-white -ml-6 md:-ml-2.75 z-20"></div>
+            <div className="w-[calc(100%-0.5rem)] md:w-[45%] bg-white p-6 rounded-lg shadow-sm text-left relative z-10 ml-5 md:ml-0">
+              {/* Arrow left (both desktop and mobile) */}
+              <div className="absolute top-[50%] -translate-y-1/2 -left-2.5 w-5.5 h-5.5 bg-white rotate-45 rounded-xs -z-10"></div>
+
+              <span className="text-brand-primary font-bold text-[14px] md:text-[15px] mb-2 block">25th January, 1960</span>
+              <h3 className="text-[#1a1a1a] font-extrabold text-[16px] mb-1">₦1 Trillion+ processed and growing</h3>
+              <p className="text-gray-500 text-[14px] font-medium leading-relaxed">Processing over ₦1 Trillion in transactions, 1.7 billion transaction counts, and serving 33.6 million unique customer interactions - with eyes firmly on Sub-Saharan Africa</p>
+            </div>
+          </div>
         </div>
+
+        
       </section>
 
       {/* CTA Section and Group Picture */}
@@ -250,19 +265,19 @@ export default function AboutPage() {
         </span>
           </div>
           
-          <h2 className="text-3xl md:text-[36px] lg:text-[40px] font-extrabold text-[#3E4095] mb-4">
+          <h2 className="text-3xl md:text-[36px] lg:text-[40px] font-extrabold text-brand-primary mb-4">
             Book A Demo Now
           </h2>
           
-          <p className="text-[#000000] text-[14px] md:text-[15px] max-w-[600px] mx-auto mb-10 font-bold px-4 md:px-0 opacity-90">
+          <p className="text-[#000000] text-[14px] md:text-[15px] max-w-150 mx-auto mb-10 font-bold px-4 md:px-0 opacity-90">
             Let&apos;s demonstrate how we can add value to your company with our suite of payment solutions.
           </p>
           
-          <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo" className="bg-[#3E4095] text-white px-10 py-3.5 rounded-lg text-[13px] font-bold border-b-[4px] border-indigo-900/60 hover:translate-y-[2px] hover:border-b-[2px] transition-all shadow-md mb-10 inline-block">
+          <a href="mailto:info@payvantage.com.ng?subject=Book%20A%20Demo" className="bg-brand-primary text-white px-10 py-3.5 rounded-lg text-[13px] font-bold border-b-4 border-indigo-900/60 hover:translate-y-0.5 hover:border-b-2 transition-all shadow-md mb-10 inline-block">
             Book A Demo
           </a>
   
-          <div className="relative w-full max-w-[1440px] mx-auto aspect-[4/1] md:aspect-[4.2/1] overflow-hidden mt-10">
+          <div className="relative w-full max-w-360 mx-auto aspect-4/1 md:aspect-[4.2/1] overflow-hidden mt-10">
                     <Image 
                       src="/image/Group_Pic.svg" 
                       alt="Payvantage Team" 
