@@ -23,7 +23,9 @@ export default function FeatureAPI() {
             type="button"
             className="bg-[#5153A0] text-white px-8 py-3.5 rounded-lg font-bold hover:opacity-90 transition-all shadow-lg"
           >
-            View API Documentation
+            <a href="https://payvantage.gitbook.io/payvantage.gitbook.io">
+              View API Documentation
+            </a>
           </button>
         </ScrollReveal>
 
