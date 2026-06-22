@@ -147,8 +147,7 @@ export default function Navbar() {
             alt="Payvantage Logo"
             width={150}
             height={40}
-            className="h-8 w-auto"
-            style={{ width: "auto", height: "auto" }}
+            style={{ height: '2rem', width: 'auto' }}
           />
         </Link>
       </div>

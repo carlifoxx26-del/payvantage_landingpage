@@ -34,13 +34,13 @@ function StatItem({ value, label, icon }: { value: string; label: string; icon?:
             alt="icon"
             width={19}
             height={22}
-            className="lg:w-[20px] md:w-[13px] w-[17px] mr-1"
+            className="lg:w-5 md:w-3.25 w-4.25 mr-1"
             style={{ height: "auto" }}
           />
         )}
         <span ref={countUpRef} />
       </h2>
-      <p className="text-brand-primary font-semibold text-[12px] md:text-[10px] lg:text-[14px] text-center max-w-[200px] md:max-w-[150px] lg:max-w-none mx-auto">
+      <p className="text-brand-primary font-semibold text-[12px] md:text-[10px] lg:text-[14px] text-center max-w-50 md:max-w-37.5 lg:max-w-none mx-auto">
         {label}
       </p>
     </div>
@@ -50,12 +50,12 @@ function StatItem({ value, label, icon }: { value: string; label: string; icon?:
 export default function Stats() {
   const stats = [
     {
-      value: "607+ Million",
+      value: "777+ Million",
       label: "Processed Transactions Value",
       icon: "/image/dollar.svg",
     },
     {
-      value: "1.7+ Billion",
+      value: "1.94+ Billion",
       label: "Transactions Count",
     },
     {
@@ -65,7 +65,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-20 w-full max-w-[1440px] mx-auto bg-white px-6">
+    <section className="py-20 w-full max-w-360 mx-auto bg-white px-6">
       <div className="flex flex-col md:flex-row justify-between items-center w-full relative">
         {stats.map((stat, index) => (
           <React.Fragment key={index}>
@@ -76,11 +76,11 @@ export default function Stats() {
             />
             {/* Vertical Divider - Desktop */}
             {index < stats.length - 1 && (
-              <div className="hidden md:block w-[2px] h-32 bg-gradient-to-b from-transparent via-brand-primary to-transparent opacity-60" />
+              <div className="hidden md:block w-0.5 h-32 bg-gradient-to-b from-transparent via-brand-primary to-transparent opacity-60" />
             )}
             {/* Horizontal Divider - Mobile */}
             {index < stats.length - 1 && (
-              <div className="md:hidden w-[80%] mx-auto h-[2px] bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-60" />
+              <div className="md:hidden w-[80%] mx-auto h-0.5 bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-60" />
             )}
           </React.Fragment>
         ))}

@@ -48,6 +48,7 @@ import { Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Providers from "@/components/Providers";
 
 const schibstedGrotesk = Schibsted_Grotesk({
   variable: "--font-schibsted-grotesk",
@@ -86,9 +87,11 @@ export default function RootLayout({
       style={{ scrollBehavior: 'smooth' }}
     >
       <body className="min-h-full flex flex-col text-foreground bg-background">
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

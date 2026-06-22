@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Partners() {
   const topRow = [
@@ -21,53 +22,53 @@ export default function Partners() {
   return (
     <section className="pt-0 md:pt-13 pb-20 px-6 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h3 className="text-[#374151] font-black mb-16 text-[18px]">Our Trusted Partners</h3>
-        
+        <ScrollReveal>
+          <h3 className="text-[#374151] font-black mb-16 text-[18px]">Our Trusted Partners</h3>
+        </ScrollReveal>
+
         <div className="opacity-80 max-w-5xl mx-auto">
           {/* Mobile Layout */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 place-items-center lg:hidden w-full">
             {allPartners.map((partner, index) => (
-              <div key={index} className={`flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer ${index === allPartners.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}>
-                <Image 
-                  src={partner.src} 
-                  alt={partner.name} 
-                  width={partner.w} 
+              <ScrollReveal key={index} delay={index * 60} className={`flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer ${index === allPartners.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}>
+                <Image
+                  src={partner.src}
+                  alt={partner.name}
+                  width={partner.w}
                   height={partner.h}
                   className={`w-auto h-auto object-contain ${partner.mobileMaxH}`}
                 />
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
           {/* Desktop Layout */}
           <div className="hidden lg:flex flex-col gap-y-16 w-full">
-            {/* Top Row */}
             <div className="flex flex-nowrap items-center justify-between gap-4 w-full">
               {topRow.map((partner, index) => (
-                <div key={index} className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer">
-                  <Image 
-                    src={partner.src} 
-                    alt={partner.name} 
-                    width={partner.w} 
+                <ScrollReveal key={index} delay={index * 80} className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer">
+                  <Image
+                    src={partner.src}
+                    alt={partner.name}
+                    width={partner.w}
                     height={partner.h}
                     className={`w-auto h-auto object-contain ${partner.desktopMaxH}`}
                   />
-                </div>
+                </ScrollReveal>
               ))}
             </div>
 
-            {/* Bottom Row */}
             <div className="flex flex-nowrap items-center justify-between gap-4 w-full px-[10%]">
               {bottomRow.map((partner, index) => (
-                <div key={index} className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer">
-                  <Image 
-                    src={partner.src} 
-                    alt={partner.name} 
-                    width={partner.w} 
+                <ScrollReveal key={index} delay={index * 80} className="flex items-center justify-center grayscale hover:grayscale-0 transition-all cursor-pointer">
+                  <Image
+                    src={partner.src}
+                    alt={partner.name}
+                    width={partner.w}
                     height={partner.h}
                     className={`w-auto h-auto object-contain ${partner.desktopMaxH}`}
                   />
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
